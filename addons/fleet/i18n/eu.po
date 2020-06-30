@@ -3,21 +3,22 @@
 # * fleet
 # 
 # Translators:
+# Ainara Galdona Usatorre <ainaragaldona@avanzosc.es>, 2017
 # ibinka lete <ilete@fpbidasoa.net>, 2017
 # Martin Trigaux, 2017
-# oihane <oihanecruce@gmail.com>, 2017
 # Gorka Toledo <gorka.toledo@gmail.com>, 2017
-# Ainara Galdona Usatorre <ainaragaldona@avanzosc.es>, 2017
+# oihane <oihanecruce@gmail.com>, 2017
 # Eneko <eastigarraga@codesyntax.com>, 2018
 # Mikel Lizarralde <mikellizarralde@gmail.com>, 2018
-# Naomi Hidalgo <naomihid96@gmail.com>, 2018
+# Naomi Hidalgo <naomihid96@gmail.com>, 2019
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-23 13:28+0000\n"
-"PO-Revision-Date: 2017-06-23 13:28+0000\n"
-"Last-Translator: Naomi Hidalgo <naomihid96@gmail.com>, 2018\n"
+"PO-Revision-Date: 2016-09-07 09:19+0000\n"
+"Last-Translator: Naomi Hidalgo <naomihid96@gmail.com>, 2019\n"
 "Language-Team: Basque (https://www.transifex.com/odoo/teams/41243/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -262,7 +263,7 @@ msgstr "Egin klik zeregin berri bat gehitzeko. "
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_log_contract_action
 msgid "Click to create a new contract."
-msgstr ""
+msgstr "Egin klik kontratu berri bat sortzeko."
 
 #. module: fleet
 #: model:ir.actions.act_window,help:fleet.fleet_vehicle_costs_action
@@ -914,7 +915,7 @@ msgstr "Faktura data"
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_log_fuel_inv_ref
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_log_services_inv_ref
 msgid "Invoice Reference"
-msgstr ""
+msgstr "Faktura erreferentzia"
 
 #. module: fleet
 #: model:fleet.vehicle.tag,name:fleet.vehicle_tag_junior
@@ -1064,7 +1065,7 @@ msgstr "Gerentea"
 #. module: fleet
 #: selection:fleet.vehicle,transmission:0
 msgid "Manual"
-msgstr ""
+msgstr "Eskuz"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_model_brand_image_medium
@@ -1325,7 +1326,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_log_services_parent_id
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_costs_view_search
 msgid "Parent"
-msgstr ""
+msgstr "Gurasoa"
 
 #. module: fleet
 #: model:ir.model.fields,help:fleet.field_fleet_vehicle_cost_parent_id

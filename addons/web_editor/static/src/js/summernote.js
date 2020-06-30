@@ -1115,7 +1115,14 @@ $.summernote.pluginEvents.untab = function (event, editor, layoutInfo) {
 $.summernote.pluginEvents.up = function (event, editor, layoutInfo) {
     var r = range.create();
     var node = dom.firstChild(r.sc.childNodes[r.so] || r.sc);
-    if (!r.isOnCell() || (!dom.isCell(node) && dom.hasContentBefore(node) && (!dom.isBR(dom.hasContentBefore(node)) || !dom.isText(node) || dom.isVisibleText(node) || dom.hasContentBefore(dom.hasContentBefore(node))))) {
+    if (!r.isOnCell()) {
+        return;
+    }
+    // check if an ancestor between node and cell has content before
+    var ancestor = dom.ancestor(node, function (ancestorNode) {
+        return dom.hasContentBefore(ancestorNode) || dom.isCell(ancestorNode);
+    });
+    if (!dom.isCell(ancestor) && (!dom.isBR(dom.hasContentBefore(ancestor)) || !dom.isText(node) || dom.isVisibleText(node) || dom.hasContentBefore(dom.hasContentBefore(ancestor)))) {
         return;
     }
     event.preventDefault();
@@ -1132,7 +1139,14 @@ $.summernote.pluginEvents.up = function (event, editor, layoutInfo) {
 $.summernote.pluginEvents.down = function (event, editor, layoutInfo) {
     var r = range.create();
     var node = dom.firstChild(r.sc.childNodes[r.so] || r.sc);
-    if (!r.isOnCell() || (!dom.isCell(node) && dom.hasContentAfter(node) && (!dom.isBR(dom.hasContentAfter(node)) || !dom.isText(node) || dom.isVisibleText(node) || dom.hasContentAfter(dom.hasContentAfter(node))))) {
+    if (!r.isOnCell()) {
+        return;
+    }
+    // check if an ancestor between node and cell has content after
+    var ancestor = dom.ancestor(node, function (ancestorNode) {
+        return dom.hasContentAfter(ancestorNode) || dom.isCell(ancestorNode);
+    });
+    if (!dom.isCell(ancestor) && (!dom.isBR(dom.hasContentAfter(ancestor)) || !dom.isText(node) || dom.isVisibleText(node) || dom.hasContentAfter(dom.hasContentAfter(ancestor)))) {
         return;
     }
     event.preventDefault();
@@ -2107,13 +2121,15 @@ $.summernote.pluginEvents.applyFont = function (event, editor, layoutInfo, color
     }
 
     // apply font: foreColor, backColor, size (the color can be use a class text-... or bg-...)
-    var node, font, $font, fonts = [], className;
+    var node, ancestors, font, $font, fonts = [], className;
     if (color || bgcolor || size) {
       for (var i=0; i<nodes.length; i++) {
         node = nodes[i];
 
-        font = dom.ancestor(node, dom.isFont);
-        if (!font) {
+        ancestors = dom.listAncestor(node, dom.isFont);
+        font = ancestors.slice(-1)[0];
+        // add font if node is not inside a font or inside an anchor firstly
+        if (!dom.isFont(font) || ancestors.filter(dom.isAnchor).length) {
           if (node.textContent.match(/^[ ]|[ ]$/)) {
             node.textContent = node.textContent.replace(/^[ ]|[ ]$/g, '\u00A0');
           }

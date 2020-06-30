@@ -3,25 +3,28 @@
 # * mail
 # 
 # Translators:
-# Tuomo Aura <tuomo.aura@web-veistamo.fi>, 2016
-# Martin Trigaux, 2016
-# Kari Lindgren <kari.lindgren@emsystems.fi>, 2016
-# Jarmo Kortetjärvi <jarmo.kortetjarvi@gmail.com>, 2016
-# Marko Happonen <marko.happonen@sprintit.fi>, 2016
-# Svante Suominen <svante.suominen@web-veistamo.fi>, 2016
-# Miku Laitinen <miku.laitinen@gmail.com>, 2016
-# Veikko Väätäjä <veikko.vaataja@gmail.com>, 2016
 # Pekko Tuomisto <pekko.tuomisto@web-veistamo.fi>, 2016
 # Timo Koukkari <ti.ko@netikka.fi>, 2016
+# Marko Happonen <marko.happonen@sprintit.fi>, 2016
 # Kari Lindgren <karisatu@gmail.com>, 2016
+# Martin Trigaux, 2016
+# Svante Suominen <svante.suominen@web-veistamo.fi>, 2016
+# Miku Laitinen <miku.laitinen@gmail.com>, 2017
+# Kari Lindgren <kari.lindgren@emsystems.fi>, 2017
 # Jukka Paulin <jukka.paulin@gmail.com>, 2018
+# Veikko Väätäjä <veikko.vaataja@gmail.com>, 2018
+# Jarmo Kortetjärvi <jarmo.kortetjarvi@gmail.com>, 2018
+# Tuomo Aura <tuomo.aura@web-veistamo.fi>, 2019
+# Sari Mäyrä <sari.mayra@sv-oy.fi>, 2019
+# Tuomas Lyyra <tuomas.lyyra@legenda.fi>, 2019
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-14 15:53+0000\n"
-"PO-Revision-Date: 2016-11-14 15:53+0000\n"
-"Last-Translator: Jukka Paulin <jukka.paulin@gmail.com>, 2018\n"
+"PO-Revision-Date: 2016-09-07 09:22+0000\n"
+"Last-Translator: Tuomas Lyyra <tuomas.lyyra@legenda.fi>, 2019\n"
 "Language-Team: Finnish (https://www.transifex.com/odoo/teams/41243/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -216,10 +219,10 @@ msgid ""
 "object.parent_id.subject) or (object.parent_id and "
 "object.parent_id.record_name and 'Re: %s' % object.parent_id.record_name)}"
 msgstr ""
-"${object.subject or (object.record_name and 'Re: %s' % object.record_name) "
-"or (object.parent_id and object.parent_id.subject and 'Re: %s' % "
+"${object.subject or (object.record_name and 'Vs: %s' % object.record_name) "
+"or (object.parent_id and object.parent_id.subject and 'Vs: %s' % "
 "object.parent_id.subject) or (object.parent_id and "
-"object.parent_id.record_name and 'Re: %s' % object.parent_id.record_name)}"
+"object.parent_id.record_name and 'Vs: %s' % object.parent_id.record_name)}"
 
 #. module: mail
 #. openerp-web
@@ -294,6 +297,8 @@ msgid ""
 "<div class=\"o_mail_notification\">created <a href=\"#\" "
 "class=\"o_channel_redirect\" data-oe-id=\"%s\">#%s</a></div>"
 msgstr ""
+"<div class=\"o_mail_notification\">loi <a href=\"#\" "
+"class=\"o_channel_redirect\" data-oe-id=\"%s\">#%s</a></div>"
 
 #. module: mail
 #: code:addons/mail/models/mail_channel.py:473
@@ -313,6 +318,8 @@ msgid ""
 "<div class=\"o_mail_notification\">left <a href=\"#\" "
 "class=\"o_channel_redirect\" data-oe-id=\"%s\">#%s</a></div>"
 msgstr ""
+"<div class=\"o_mail_notification\">poistui <a href=\"#\" "
+"class=\"o_channel_redirect\" data-oe-id=\"%s\">#%s</a></div>"
 
 #. module: mail
 #: code:addons/mail/wizard/invite.py:23
@@ -1056,7 +1063,7 @@ msgstr "Viestintä"
 #: model:ir.model.fields,help:mail.field_res_partner_message_bounce
 #: model:ir.model.fields,help:mail.field_res_users_message_bounce
 msgid "Counter of the number of bounced emails for this contact"
-msgstr ""
+msgstr "Tämän yhteystiedon bounced-tilassa olevien sähköpostien laskuri"
 
 #. module: mail
 #. openerp-web
@@ -1341,6 +1348,8 @@ msgid ""
 "Do not keep a copy of the email in the document communication history (mass "
 "mailing only)"
 msgstr ""
+"Do not keep a copy of the email in the document communication history (mass "
+"mailing only)"
 
 #. module: mail
 #: model:ir.model,name:mail.model_mail_followers
@@ -1555,7 +1564,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mail.field_mail_message_starred_partner_ids
 #: model:ir.model.fields,field_description:mail.field_survey_mail_compose_message_starred_partner_ids
 msgid "Favorited By"
-msgstr ""
+msgstr "Favorited By"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_email_template_preview_model_object_field
@@ -2496,7 +2505,7 @@ msgstr "Livechat-keskustelu"
 #: code:addons/mail/static/src/js/chatter.js:38
 #, python-format
 msgid "Log"
-msgstr "Loki"
+msgstr "Tallenna"
 
 #. module: mail
 #. openerp-web
@@ -2834,7 +2843,7 @@ msgstr "Nimi"
 #: model:ir.model.fields,help:mail.field_mail_message_record_name
 #: model:ir.model.fields,help:mail.field_survey_mail_compose_message_record_name
 msgid "Name get of the related document."
-msgstr ""
+msgstr "Name get of the related document."
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_email_template_preview_report_name
@@ -2940,7 +2949,7 @@ msgstr "Seuraajien lisäys"
 #: code:addons/mail/static/src/xml/thread.xml:16
 #, python-format
 msgid "No matches found"
-msgstr ""
+msgstr "Haku ei tuottanut tuloksia"
 
 #. module: mail
 #. openerp-web
@@ -3204,7 +3213,7 @@ msgstr "Odoo"
 #, python-format
 msgid ""
 "Odoo has now the permission to send you native notifications on this device."
-msgstr ""
+msgstr "Odoolla on nyt lupa lähettää huomautusviestejä tälle laitteelle."
 
 #. module: mail
 #. openerp-web
@@ -3220,7 +3229,7 @@ msgstr "Odoo tarvitsee lupasi"
 msgid ""
 "Odoo will not have the permission to send native notifications on this "
 "device."
-msgstr ""
+msgstr "Odoolla ei ole lupaa lähettää huomautusviestejä tälle laitteelle."
 
 #. module: mail
 #. openerp-web
@@ -3315,7 +3324,7 @@ msgstr "Avaa keskustelu"
 #: model:ir.model.fields,field_description:mail.field_res_partner_opt_out
 #: model:ir.model.fields,field_description:mail.field_res_users_opt_out
 msgid "Opt-Out"
-msgstr "Jättäydy pois"
+msgstr "Markkinointikielto"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_alias_alias_force_thread_id
@@ -3597,7 +3606,7 @@ msgstr "Yksityiset kanavat"
 #: code:addons/mail/static/src/js/client_action.js:138
 #, python-format
 msgid "Public Channels"
-msgstr ""
+msgstr "Julkiset kanavat"
 
 #. module: mail
 #: code:addons/mail/wizard/mail_compose_message.py:180
@@ -3608,7 +3617,7 @@ msgstr "Vast:"
 #. module: mail
 #: selection:mail.notification,email_status:0
 msgid "Ready to Send"
-msgstr ""
+msgstr "Valmiina lähetettäväksi"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_mail_search selection:mail.mail,state:0
@@ -3708,6 +3717,8 @@ msgid ""
 "Reply email address. Setting the reply_to bypasses the automatic thread "
 "creation."
 msgstr ""
+"Reply email address. Setting the reply_to bypasses the automatic thread "
+"creation."
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_email_template_preview_reply_to
@@ -3784,7 +3795,7 @@ msgstr "Suunniteltu päivämäärä"
 #: model:ir.model.fields,field_description:mail.field_mail_mail_scheduled_date
 #: model:ir.ui.view,arch_db:mail.email_template_form
 msgid "Scheduled Send Date"
-msgstr ""
+msgstr "Aikataulutettu lähetyspäivä"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_mail_alias_search
@@ -4155,7 +4166,7 @@ msgstr ""
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.message_origin_link
 msgid "This"
-msgstr ""
+msgstr "Tämän"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_channel_image
@@ -4238,6 +4249,8 @@ msgid ""
 "Tracked values are stored in a separate model. This field allow to "
 "reconstruct the tracking and to generate statistics on the model."
 msgstr ""
+"Seuratut arvot tallennetaan erilliseen malliin. Tämän kentän avulla voidaan "
+"rekonstruoida seuranta ja luoda tilastoja mallista."
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_message_form
@@ -4262,7 +4275,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mail.field_mail_message_tracking_value_ids
 #: model:ir.model.fields,field_description:mail.field_survey_mail_compose_message_tracking_value_ids
 msgid "Tracking values"
-msgstr ""
+msgstr "Seuranta-arvot"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_compose_message_message_type
@@ -4282,6 +4295,8 @@ msgstr "UUID"
 #, python-format
 msgid "Unable to send email, please configure the sender's email address."
 msgstr ""
+"Sähköpostin lähetys ei onnistu, koska lähettäjältä puuttuu sähköpostiosoite."
+" Lisääthän käyttäjälle sähköpostiosoitteen."
 
 #. module: mail
 #. openerp-web
@@ -4551,7 +4566,7 @@ msgstr ""
 #: model:ir.model.fields,help:mail.field_mail_compose_message_is_log
 #: model:ir.model.fields,help:mail.field_survey_mail_compose_message_is_log
 msgid "Whether the message is an internal note (comment mode only)"
-msgstr ""
+msgstr "Onko viesti sisäinen huomautus (vain kommenttitila)"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.mail_channel_view_form
@@ -4735,7 +4750,7 @@ msgstr "seuraajat"
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.message_origin_link
 msgid "from:"
-msgstr ""
+msgstr ":"
 
 #. module: mail
 #: model:mail.channel,name:mail.channel_all_employees
@@ -4745,7 +4760,7 @@ msgstr ""
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.message_origin_link
 msgid "has been"
-msgstr ""
+msgstr "on"
 
 #. module: mail
 #: model:ir.model,name:mail.model_ir_actions_server
@@ -4760,7 +4775,7 @@ msgstr "ir.autovacuum"
 #. module: mail
 #: model:ir.model,name:mail.model_mail_alias_mixin
 msgid "mail.alias.mixin"
-msgstr ""
+msgstr "mail.alias.mixin"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.mail_channel_view_form
@@ -4796,7 +4811,7 @@ msgstr ""
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.message_origin_link
 msgid "modified"
-msgstr ""
+msgstr "muokattu"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_general_configuration_mail_alias_domain

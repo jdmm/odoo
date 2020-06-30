@@ -3,20 +3,21 @@
 # * sale
 # 
 # Translators:
-# Manuela Silva <manuela.silva@sky.com>, 2016
-# Martin Trigaux, 2016
-# Ricardo Martins <ricardo.nbs.martins@gmail.com>, 2016
-# Manuela Silva <inactive+h_manuela_rodsilva@transifex.com>, 2016
-# Daniel C Santos <dcs@thinkopensolutions.pt>, 2016
 # Andre Mendes <afm@thinkopen.solutions>, 2016
-# Nuno Silva <nuno.silva@arxi.pt>, 2018
+# Daniel C Santos <dcs@thinkopensolutions.pt>, 2016
+# Manuela Silva <inactive+h_manuela_rodsilva@transifex.com>, 2016
+# Martin Trigaux, 2016
+# Ricardo Martins <ricardo.nbs.martins@gmail.com>, 2018
+# Manuela Silva <manuelarodsilva@gmail.com>, 2018
+# Nuno Silva <nuno.silva@arxi.pt>, 2019
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-08 13:18+0000\n"
-"PO-Revision-Date: 2018-03-08 13:18+0000\n"
-"Last-Translator: Nuno Silva <nuno.silva@arxi.pt>, 2018\n"
+"PO-Revision-Date: 2016-09-07 09:28+0000\n"
+"Last-Translator: Nuno Silva <nuno.silva@arxi.pt>, 2019\n"
 "Language-Team: Portuguese (https://www.transifex.com/odoo/teams/41243/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -376,6 +377,11 @@ msgstr ""
 #: model:ir.model.fields,help:sale.field_account_config_settings_group_analytic_account_for_sales
 msgid "Allows you to specify an analytic account on sales orders."
 msgstr "Permite indicar uma conta analítica nas ordens de venda."
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.report_invoice_layouted
+msgid "Amount"
+msgstr "Valor"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_crm_team_sales_to_invoice_amount
@@ -1102,6 +1108,8 @@ msgid ""
 "It is forbidden to modify the following fields in a locked order:\n"
 "%s"
 msgstr ""
+"É proibido modificar os seguintes campos numa ordem bloqueada:\n"
+"%s"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_advance_payment_inv___last_update
@@ -2138,14 +2146,29 @@ msgid "Terms and conditions"
 msgstr "Termos e condições"
 
 #. module: sale
-#: code:addons/sale/models/sale_analytic.py:84
+#: code:addons/sale/models/sale_analytic.py:117
 #, python-format
 msgid ""
-"The Sale Order %s linked to the Analytic Account must be validated before "
-"registering expenses."
+"The Sales Order %s linked to the Analytic Account %s is cancelled. You "
+"cannot register an expense on a cancelled Sales Order."
 msgstr ""
-"A ordem de venda %s está ligada a uma conta analítica e deve ser validada "
-"antes de registar despesas."
+
+#. module: sale
+#: code:addons/sale/models/sale_analytic.py:112
+#, python-format
+msgid ""
+"The Sales Order %s linked to the Analytic Account %s must be validated "
+"before registering expenses."
+msgstr ""
+
+#. module: sale
+#: code:addons/sale/models/sale_analytic.py:115
+#, python-format
+msgid ""
+"The Sales Order %s linked to the Analytic Account %s is currently locked. "
+"You cannot register an expense on a locked Sales Order. Please create a new "
+"SO linked to this Analytic Account."
+msgstr ""
 
 #. module: sale
 #: model:ir.model.fields,help:sale.field_sale_advance_payment_inv_amount

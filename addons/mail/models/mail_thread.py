@@ -188,6 +188,8 @@ class MailThread(models.AbstractModel):
     @api.multi
     def _get_message_needaction(self):
         res = dict((res_id, 0) for res_id in self.ids)
+        if not res:
+            return
 
         # search for unread messages, directly in SQL to improve performances
         self._cr.execute(""" SELECT msg.res_id FROM mail_message msg
@@ -341,7 +343,9 @@ class MailThread(models.AbstractModel):
                         'email_link': email_link
                     }
                 }
-            return "%(static_help)s<p>%(dyn_help)s" % {
+            # do not add alias two times if it was added previously
+            if not help or help.find("oe_view_nocontent_alias") == -1:
+                return '%(static_help)s<p class="oe_view_nocontent_alias">%(dyn_help)s</p>' % {
                     'static_help': help or '',
                     'dyn_help': _("You could also add a new %(document)s by sending an email to: %(email_link)s.") %  {
                         'document': document_name,
@@ -1498,7 +1502,7 @@ class MailThread(models.AbstractModel):
             # Very unusual situation, be we should be fault-tolerant here
             message_id = "<%s@localhost>" % time.time()
             _logger.debug('Parsing Message without message-id, generating a random one: %s', message_id)
-        msg_dict['message_id'] = message_id
+        msg_dict['message_id'] = message_id.strip()
 
         if message.get('Subject'):
             msg_dict['subject'] = tools.decode_smtp_header(message.get('Subject'))

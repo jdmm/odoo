@@ -3,23 +3,24 @@
 # * sale
 # 
 # Translators:
-# Martin Trigaux, 2016
-# Khwunchai Jaengsawang <khwunchai.j@ku.th>, 2016
+# Waratha Kong, 2016
 # Seksan Poltree <seksan.poltree@gmail.com>, 2016
 # surapas haemaprasertsuk <surapas@gmail.com>, 2016
-# Waratha Kong, 2016
-# Prawit Boonthue <prawit.boonthue@gmail.com>, 2016
 # Rockers <sumorock@hotmail.com>, 2016
+# Martin Trigaux, 2016
 # Winyoo Kongkavitool <winyoo@tinnakorn.com>, 2017
+# Prawit Boonthue <prawit.boonthue@gmail.com>, 2017
 # Somchart Jabsung <jabsung.s@gmail.com>, 2018
-# Pornvibool Tippayawat <pornvibool.t@gmail.com>, 2018
+# Khwunchai Jaengsawang <khwunchai.j@ku.th>, 2018
+# Pornvibool Tippayawat <pornvibool.t@gmail.com>, 2019
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-08 13:18+0000\n"
-"PO-Revision-Date: 2018-03-08 13:18+0000\n"
-"Last-Translator: Pornvibool Tippayawat <pornvibool.t@gmail.com>, 2018\n"
+"PO-Revision-Date: 2016-09-07 09:28+0000\n"
+"Last-Translator: Pornvibool Tippayawat <pornvibool.t@gmail.com>, 2019\n"
 "Language-Team: Thai (https://www.transifex.com/odoo/teams/41243/th/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -271,7 +272,7 @@ msgstr "<strong>ยอดรวม</strong>"
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.report_saleorder_document
 msgid "<strong>Total Without Taxes</strong>"
-msgstr ""
+msgstr "<strong>ทั้งหมดไม่รวมภาษี</strong>"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.report_saleorder_document
@@ -363,6 +364,11 @@ msgstr "ยอมให้เลือกและใส่ข้อมูลห
 #: model:ir.model.fields,help:sale.field_account_config_settings_group_analytic_account_for_sales
 msgid "Allows you to specify an analytic account on sales orders."
 msgstr "ยอมให้ตั้งบัญชีวิเคราะห์ตามคำสั่งซื้อ"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.report_invoice_layouted
+msgid "Amount"
+msgstr "จำนวน"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_crm_team_sales_to_invoice_amount
@@ -656,7 +662,7 @@ msgstr ""
 #. module: sale
 #: selection:product.template,invoice_policy:0
 msgid "Delivered quantities"
-msgstr ""
+msgstr "จำนวนที่ถูกส่งมอบ"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_account_invoice_partner_shipping_id
@@ -1376,7 +1382,7 @@ msgstr ""
 #. module: sale
 #: selection:product.template,invoice_policy:0
 msgid "Ordered quantities"
-msgstr ""
+msgstr "จำนวนที่สั่งซื้อ"
 
 #. module: sale
 #: model:ir.actions.act_window,name:sale.action_orders_upselling
@@ -2080,11 +2086,28 @@ msgid "Terms and conditions"
 msgstr "เงื่อนไขและข้อกำหนด"
 
 #. module: sale
-#: code:addons/sale/models/sale_analytic.py:84
+#: code:addons/sale/models/sale_analytic.py:117
 #, python-format
 msgid ""
-"The Sale Order %s linked to the Analytic Account must be validated before "
-"registering expenses."
+"The Sales Order %s linked to the Analytic Account %s is cancelled. You "
+"cannot register an expense on a cancelled Sales Order."
+msgstr ""
+
+#. module: sale
+#: code:addons/sale/models/sale_analytic.py:112
+#, python-format
+msgid ""
+"The Sales Order %s linked to the Analytic Account %s must be validated "
+"before registering expenses."
+msgstr ""
+
+#. module: sale
+#: code:addons/sale/models/sale_analytic.py:115
+#, python-format
+msgid ""
+"The Sales Order %s linked to the Analytic Account %s is currently locked. "
+"You cannot register an expense on a locked Sales Order. Please create a new "
+"SO linked to this Analytic Account."
 msgstr ""
 
 #. module: sale
@@ -2270,7 +2293,7 @@ msgstr "จำนวนไม่รวมภาษี"
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_report_price_subtotal
 msgid "Untaxed Total"
-msgstr ""
+msgstr "ทั้งหมดไม่รวมภาษี"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.sale_order_view_search_inherit_sale
